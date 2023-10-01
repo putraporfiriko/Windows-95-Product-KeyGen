@@ -1,6 +1,16 @@
 import random
 import sys
 
+
+# fun ui stuff
+
+print("""
+##################################
+#                                #
+#        Windows 95 Keygen       #
+#                                #
+##################################
+""")
 # argument handling
 
 if len(sys.argv) > 1 and sys.argv[1].isnumeric() == True:
@@ -13,14 +23,17 @@ else:
 # no arguments?
 
 if repeat == None:
-    repeats = (input("How many keys do you want to generate? (press enter for 1 key)"))
-    if repeats == "":
+    repeat = (input("How many keys do you want to generate? (press enter for 1 key) "))
+    if repeat == "":
         repeat = 1
+    elif repeat.isnumeric() == True:
+        repeat = int(repeat)
     else: 
-        while repeats.isnumeric() == False:
+        while repeat.isnumeric() == False:
             print("Please enter a number!")
-            repeats = (input("How many keys do you want to generate? "))
-        repeats = int(repeats)
+            repeat = (input("How many keys do you want to generate? "))
+            repeat = repeat
+        repeat = int(repeat)
 
 # making the actual key
 
@@ -50,6 +63,8 @@ def keygen():
     
 
 # print the key
+
+print(f"Printing {repeat} keys.\n")
 
 for i in range(repeat):
     keygen()
