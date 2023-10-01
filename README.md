@@ -19,3 +19,8 @@ The product key, as seen in the menu above, can be broken down into the followin
 - ZZZZZZZ represents a unique identifier for the key. This part of the key that determines if the key is valid or no. Determining if this string is valid or no can be done by adding up all the numbers in the string. If the sum of the numbers is divisible by 7, then the key is valid. Another requirement for the key to be valid is that the first number in this sequence must be a 0. For this example, we have the string 0063793. Adding up all the numbers in this string, we get 28. 28 is divisible by 7, so this key is valid.
 
 - The final 5 characters doesn't have a check for validity, so we can technically put any number we want, as long as it's 5 characters long.
+
+
+
+### References:
+https://gurney.dev/posts/mod7/
