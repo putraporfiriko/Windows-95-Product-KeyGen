@@ -10,10 +10,7 @@ The Windows 95 OEM product key uses a certain algorithm to determine if the prov
 
 ![The Windows 95 OEM Key input menu. There are 4 sections, first section being 5 character long, second section being a fixed string "OEM", third being a 7 character long section, and the last section being 5 character long.](https://github.com/putraporfiriko/Windows-95-Product-KeyGen/blob/main/assets/ProductKey.png)
 
-From the key input menu above, we can dissect the key again into the following form: `XXXYY-OEM-ZZZZZZZ-AAAAA`
-
-each X, Y, and Z represents a different thing in making the product key. For example, we're gonna take the key 
-`19203-OEM-0063793-47815` as an example.
+The product key, as seen in the menu above, can be broken down into the following format: `XXXYY-OEM-ZZZZZZZ-AAAAA`. Each of the X, Y, and Z characters signifies a different aspect of the product key. For instance, let’s consider the key `19203-OEM-0063793-47815` as an example.
 
 - XXX represents the date on which the key was generated. In this example, we have the numbers 192. This means that the key was generated on the 192nd day of the year, which is July 11th.
 
