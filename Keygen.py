@@ -1,26 +1,32 @@
 import random
 import sys
 
+# argument handling
+
 if len(sys.argv) > 1 and sys.argv[1].isnumeric() == True:
-    repeats = int(sys.argv[1])
+    repeat = int(sys.argv[1])
 else:
-    if sys.argv[1].isnumeric() == False:
-        print("Invalid argument.")
-        repeats = None
+    if len(sys.argv) == 1:
+       print("No argument given.")
+       repeat = None
+
+# no arguments?
+
+if repeat == None:
+    repeats = (input("How many keys do you want to generate? (press enter for 1 key)"))
+    if repeats == "":
+        repeat = 1
     else: 
-        print("No argument given.")
-        repeats = None
+        while repeats.isnumeric() == False:
+            print("Please enter a number!")
+            repeats = (input("How many keys do you want to generate? "))
+        repeats = int(repeats)
 
-if repeats == None:
-    repeats = (input("How many keys do you want to generate? "))
-    while repeats.isnumeric() == False:
-        print("Please enter a number!")
-        repeats = (input("How many keys do you want to generate? "))
-    repeats = int(repeats)
+# making the actual key
 
-def keygen():      # the rng part, which is actually the only thing that matters lmfao
+def keygen(): 
     # define var
-    sum = 1 #i made the default value as 1 so the while loop can run. not efficient but how much is my losses
+    sum = 1 #i made the default value as 1 so the while loop can run.
     ## ini semua buat rng
     pkey_end5 = random.randint(10000, 99999)
     pkey_date = random.randint(1, 366)
@@ -43,7 +49,9 @@ def keygen():      # the rng part, which is actually the only thing that matters
     print(f"{pkey_date}{pkey_year}-OEM-00{pkey_div7}-{pkey_end5}")
     
 
-for i in range(repeats):
+# print the key
+
+for i in range(repeat):
     keygen()
 
 
