@@ -1,16 +1,6 @@
 import random
 import sys
 
-
-# fun ui stuff
-
-print("""
-##################################
-#                                #
-#        Windows 95 Keygen       #
-#                                #
-##################################
-""")
 # argument handling
 
 if len(sys.argv) > 1 and sys.argv[1].isnumeric() == True:
