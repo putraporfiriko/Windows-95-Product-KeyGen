@@ -19,6 +19,7 @@ if repeat == None:
     elif repeat.isnumeric() == True:
         repeat = int(repeat)
     elif repeat == "weed":
+        print("great choice.\n")
         print("06900-OEM-0694207-80085")
         exit()
     else: 
