@@ -18,6 +18,9 @@ if repeat == None:
         repeat = 1
     elif repeat.isnumeric() == True:
         repeat = int(repeat)
+    elif repeat == "weed":
+        print("06900-OEM-0694207-80085")
+        exit()
     else: 
         while repeat.isnumeric() == False:
             print("Please enter a number!")
@@ -45,11 +48,14 @@ def keygen():
     # make proper pkey_div7. if sum is not divisible by 7, rng new pkey_div7 and check again
     while sum % 7 != 0:
         sum = 0                                     ##this both resets sum
-        pkey_div7 = random.randint(10000, 99999)    ##AND pkey_div7
-        for i in str(pkey_div7):
+        pkey_div7 = random.randint(1, 999999)       ##AND pkey_div7
+        pkey_div7 = str(pkey_div7)
+        if len(pkey_div7) < 6:
+            pkey_div7 = pkey_div7.zfill(6)          ##dumbass learns about zfill
+        for i in pkey_div7:
             sum += int(i)
 
-    print(f"{pkey_date}{pkey_year}-OEM-00{pkey_div7}-{pkey_end5}")
+    print(f"{pkey_date}{pkey_year}-OEM-0{pkey_div7}-{pkey_end5}")
     
 
 # print the key
