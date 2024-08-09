@@ -1,5 +1,5 @@
 # key generating part
-def keygen(): 
+def keygen():
     # define var
     sum = 1 #i made the default value as 1 so the while loop can run.
     ## ini semua buat rng
@@ -48,18 +48,20 @@ def noargs():
             if repeat == "":
                 repeat = 1
                 return
-        
-# main function. handles argchecks and handoff to keygen() or noargs(), then to keygen()
+
+# main function. handles argchecks and handoff to keygen() or noargs(), then to keygen. case rewrite
 def main():
     global repeat
-    if len(sys.argv) > 1 and sys.argv[1].isnumeric() == True: # sys.arg check. no arguments? go to noargs()
-        repeat = int(sys.argv[1])           
-    elif len(sys.argv) == 1:                                  # syarat 1: percabangan
-        print("No argument given.")
-        noargs()
-    elif len(sys.argv) > 1 and sys.argv[1].isnumeric() == False:
-        print("Invalid argument.")                            # syarat 3: i/o
-        noargs()
+    match len(sys.argv):
+        case 1:
+            print("No argument given.")
+            noargs()
+        case 2:
+            if sys.argv[1].isnumeric() == True:
+                repeat = int(sys.argv[1])
+            else:
+                print("Invalid argument.")
+                noargs()
     print(f"Printing {repeat} keys.\n")
     for i in range(int(repeat)):                              # syarat 2: perulangan
         keygen()
@@ -67,4 +69,3 @@ def main():
 if __name__ == "__main__":
     import random, sys
     main()
-
